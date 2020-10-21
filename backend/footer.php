@@ -1,0 +1,1 @@
+<div class="copy-right mt-auto"> &copy; <?php echo date("Y"); ?> DogKeeper. All Rights Reserved.</div>
