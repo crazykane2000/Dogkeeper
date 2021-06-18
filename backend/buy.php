@@ -61,12 +61,12 @@
                           <li class="nav-item">
                               <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">Buy Via Wire Transfer</a>
                           </li>
-                          <li class="nav-item">
+                         <!--  <li class="nav-item">
                               <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-expanded="false">Buy Via Wire Bitcoin</a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" id="gatar-tab" data-toggle="tab" href="#gatar" role="tab" aria-controls="gatar" aria-expanded="false">Buy Via Wire Ethereum</a>
-                          </li>
+                          </li> -->
                           <div style="padding: 10px;text-align: left;">
                                   <h3 style="font-family: 'Didact Gothic', sans-serif;color: #444;font-size: 24px;">Bank WIRE Transfer</h3>
                                   <hr style="opacity: .1" />
@@ -177,7 +177,7 @@
            // print_r($price_bbt);
             //print_r($btc);
             $btc = 1/$btc;
-            echo $btc;
+           //echo $btc;
             $price_bbt = $price_bbt['price'];
             //echo $price_bbt;
 
@@ -186,16 +186,16 @@
 
           <!-- Modal content-->
           <div class="modal-content" style="border-radius: 0px;">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Please Enter Details</h4>
-              <p>1 <?php echo token_names(); ?> = <?php echo round($price_bbt,2); ?> USD</p>
+            <div class="modal-header" style="position: relative;">
+              <button type="button" class="close" data-dismiss="modal" style="margin: 0;position: absolute;right: 10px;top: 10px;">&times;</button>
+              <h4 >1 <?php echo token_names(); ?> = <?php echo round($price_bbt,2); ?> USD</h4>
+              
             </div>
             <div class="modal-body">
              <form action="buy_handle.php" method="POST">
                <div style="padding: 30px;">
                  <div class="form-group">
-                   <label>Enter Amount</label>
+                   <label>Enter Amount  (USD)</label>
                    <input type="text" name="amount" id="amty" value="000" class="form-control" placeholder="Enter Amount Here">
                  </div>
                  <div class="form-group">
@@ -235,6 +235,95 @@
     <script src="../vendors/air-datepicker/js/i18n/datepicker.en.js"></script>
     <script src="../js/app.js"></script>
     <?php include 'svg.php'; ?>
+    <script type="text/javascript">
+
+     
+      $(document).ready(function(){
+       $("#nots_btn").click(function(){
+          $("#nots").slideToggle("fast");
+        });
+
+       $('html').click(function() {
+         $("#nots").slideUp("fast");
+       });
+
+       $('#nots, #lopp').click(function(event){
+           event.stopPropagation();
+       });
+
+       $("#amty").keyup(function(){
+        var price = parseFloat(<?php echo $price_bbt; ?>);
+        //alert(price);
+        var amt = $("#amty").val(); 
+        var bbt = amt/price;
+        $("#bbty").val(bbt.toFixed(2));
+       });
+
+       $("#bbty").keyup(function(){
+        var price = parseFloat(<?php echo $price_bbt; ?>);
+        //alert(price);
+        var bbt = $("#bbty").val(); 
+        var amt = bbt*price;
+        $("#amty").val(amt.toFixed(2));
+       });
+
+
+       // ether Starts Here
+        $("#eamty").keyup(function(){
+          var price = parseFloat(<?php echo $no_of_bbt_by_ether; ?>);
+          //alert(price);
+          var amt = $("#eamty").val(); 
+          var bbt = price*amt;
+          $("#ebbty").val(bbt.toFixed(2));
+         });
+
+         $("#ebbty").keyup(function(){
+          var price = parseFloat(<?php echo $no_of_bbt_by_ether; ?>);
+          //alert(price);
+          var bbt = $("#ebbty").val(); 
+          var amt = bbt/price;
+          $("#eamty").val(amt.toFixed(2));
+         });
+       //Ether Ends Here
+
+       // Bitcoin Starts Here
+        $("#bamty").keyup(function(){
+          var price = parseFloat(<?php echo $no_of_bbt_by_btc; ?>);
+          //alert(price);
+          var amt = $("#bamty").val(); 
+          var bbt = amt*price;
+          $("#bbbty").val(bbt.toFixed(2));
+         });
+
+         $("#bbbty").keyup(function(){
+          var price = parseFloat(<?php echo $no_of_bbt_by_btc; ?>);
+          //alert(price);
+          var bbt = $("#bbbty").val(); 
+          var amt = bbt/price;
+          $("#bamty").val(amt.toFixed(2));
+         });
+       //Bitcoin Ends Here
+        
+
+        // Tether Starts Here
+        $("#eamtyas").keyup(function(){
+          var price = parseFloat(<?php echo $no_of_bbt_by_ethers; ?>);
+          //alert(price);
+          var amt = $("#eamtyas").val(); 
+          var bbt = price*amt;
+          $("#ebbtys").val(bbt.toFixed(2));
+         });
+
+         $("#ebbtys").keyup(function(){
+          var price = parseFloat(<?php echo $no_of_bbt_by_ethers; ?>);
+          //alert(price);
+          var bbt = $("#ebbtys").val(); 
+          var amt = bbt/price;
+          $("#eamtys").val(amt.toFixed(2));
+         });
+       //Tether Ends Here
+      });
+    </script>
 </body>
 
 </html>

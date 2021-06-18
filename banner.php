@@ -10,7 +10,7 @@
                         </div>
                      </div>
                      <div class="form-search" data-animate="fadeInDown">
-                        <form>
+                        <form action="sign_up.php">
                            <div class="row align-items-end">
                               <div class=" col-xl-6 mb-4 mb-xl-0 text-left">
                                  <label for="key-word" class="font-weight-bold text-white text-uppercase">What do
@@ -33,30 +33,31 @@
                                        </li>
                                        <li class="dropdown-item item">
                                           <a href="#" class="link-hover-dark-white">
-                                             <span class="font-size-md">Dog Health Planing </span>
+                                             <span class="font-size-md">Health & Wellness </span>
                                           </a>
                                        </li>
                                        <li class="dropdown-item item">
                                           <a href="#" class="link-hover-dark-white">
-                                             <span class="font-size-md">Dog Consultancy</span>
+                                             <span class="font-size-md">Diet & Nutrition</span>
                                           </a>
                                        </li>
-                                       <li class="dropdown-item item">
-                                          <a href="#" class="link-hover-dark-white">
-                                             <span class="font-size-md">Dog Keeping</span>
-                                          </a>
-                                       </li>
+                                       
                                     </ul>
                                  </div>
                               </div>
                               <div class=" col-xl-4 mb-4 mb-xl-0 text-left">
                                  <label for="region" class="font-weight-bold text-white text-uppercase">NEAR</label>
                                  <div class="input-group dropdown bg-white rounded">
-                                    <input type="text" id="region" class="form-control border-0 form-control-lg" placeholder="New York, USA" data-toggle="dropdown" aria-haspopup="true" autocomplete="off">
+                                    <input type="text" id="region" class="form-control border-0 form-control-lg" placeholder="Washington, DC" data-toggle="dropdown" aria-haspopup="true" autocomplete="off">
                                     <a href="#" class="input-group-append text-decoration-none">
                                     <i class="fal fa-chevron-down"></i>
                                     </a>
                                     <ul class="dropdown-menu form-search-ajax" aria-labelledby="region">
+                                       <li class="dropdown-item item">
+                                          <a href="#" class="link-hover-dark-white">
+                                          Washington, DC
+                                          </a>
+                                       </li>
                                        <li class="dropdown-item item">
                                           <a href="#" class="link-hover-dark-white">
                                           Austin
@@ -97,11 +98,7 @@
                                           Seattle
                                           </a>
                                        </li>
-                                       <li class="dropdown-item item">
-                                          <a href="#" class="link-hover-dark-white">
-                                          Washington
-                                          </a>
-                                       </li>
+                                       
                                     </ul>
                                  </div>
                               </div>

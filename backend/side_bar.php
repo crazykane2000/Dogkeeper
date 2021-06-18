@@ -19,6 +19,19 @@
             <li class="list-group-item p-0 mb-2 lh-15">
                 <a href="view_subscribers.php" class="d-flex align-items-center link-hover-dark-primary font-size-md"> <span class="d-inline-block mr-3"><i class="fal fa-envelope"></i></span> <span>Subscribers </span> </a>
             </li>
+
+             <li class="list-group-item p-0 mb-2 lh-15">
+                <a href="view_kyc.php" class="d-flex align-items-center link-hover-dark-primary font-size-md"> <span class="d-inline-block mr-3"><i class="fal fa-envelope"></i></span> <span>KYC Requests </span> </a>
+            </li>
+
+             <li class="list-group-item p-0 mb-2 lh-15">
+                <a href="view_buy.php" class="d-flex align-items-center link-hover-dark-primary font-size-md"> <span class="d-inline-block mr-3"><i class="fal fa-envelope"></i></span> <span>Buy Requests </span> </a>
+            </li>
+
+            <li class="list-group-item p-0 mb-2 lh-15">
+                <a href="transaction_admin.php" class="d-flex align-items-center link-hover-dark-primary font-size-md"> <span class="d-inline-block mr-3"><i class="fal fa-envelope"></i></span> <span>All Transactions </span> </a>
+            </li>
+            
             
             <li class="list-group-item p-0 mb-2 lh-15">
                <a href="#registered_members" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="false">
@@ -100,6 +113,12 @@
                   <a href="edit_profile.php" style="font-size: 12px;"> <i class="far fa-pencil"></i> Edit Profile </a>
                 </div>
             </div>
+            <hr/>
+
+            <b>Wallet Balance</b>
+            <h3><?php echo $pdo_auth['balance']; ?> DT</h3>
+            <hr/>
+
             <ul class="list-group list-group-flush list-group-borderless">
                 <li class="list-group-item p-0 mb-2 lh-15">
                     <a href="dashboard.php" class="d-flex align-items-center link-hover-dark-primary font-size-md"> <span class="d-inline-block mr-3"><i class="fal fa-cog"></i></span> <span>Dashboard</span> </a>
@@ -109,7 +128,7 @@
                         <ul
                             class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="wallet">
                             <li class="list-group-item p-0 mb-2 lh-15"><a href="buy.php" class="link-hover-dark-primary font-size-md">Add Dog Tokens</a></li>
-                            <li class="list-group-item p-0 mb-2 lh-15"><a href="view_buy_and_balance.php" class="link-hover-dark-primary font-size-md">View My Balance</a></li>
+                            <li class="list-group-item p-0 mb-2 lh-15"><a href="view_buy_and_balance.php" class="link-hover-dark-primary font-size-md"> My Buy Requests</a></li>
                             <li class="list-group-item p-0 mb-2 lh-15"></li>
                             <li class="list-group-item p-0 mb-2 lh-15"><a href="transactions.php" class="link-hover-dark-primary font-size-md">Transactions</a></li>
                             </ul>

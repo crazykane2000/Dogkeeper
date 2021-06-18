@@ -116,10 +116,9 @@
         </div>
     </div>
     <?php include 'login_popup.php'; ?>
-
+<?php if($pdo_auth['kyc_status']=="Pending"){ ?>
     <div id="kycModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -127,10 +126,9 @@
           </div>
           <div class="modal-body">
             <div class="card-box items">
-                      <div style="padding:10px"></div>               
-                        
+                      <div style="padding:10px"></div> 
                        <center>
-                         <?php if(!isset($_REQUEST['choice'])){ ?>
+                         
                             <div class="century" style="font-size: 20px;color: #333"> Upload Your KYC Documents</div>
                             <div class="century" style="font-size: 13px;color: #222">You Must Upload a Government Authorised Dog Care Taker Certificate  <b style="color: red">Document</b> For Taking Dog Related Services</div>
                             <div style="padding:20px"></div>
@@ -158,13 +156,9 @@
 
                                <button class="btn btn-primary btn-lg" style="width: 100%" type="sumbit" name="submit" >UPLOAD YOUR DOCUMENTS</button>
                              </form>
-                         <?php }else{ ?>
+                         
 
-                            <img src="happystate.gif" style="width: 100%">
-                            <h2>KYC Recieved</h2>
-                            <p>You will be able to take benefits once you are approved</p>
-
-                      <?php   }?>
+                            
                        </center>
                        
                    </div>
@@ -173,6 +167,12 @@
 
       </div>
     </div>
+    <?php }?>
+
+       <!--  <img src="happystate.gif" style="width: 100%">
+                <h2>KYC Recieved</h2>
+                <p>You will be able to take benefits once you are approved</p> -->
+           <?php //  }?>
     
     <script src="../vendors/jquery.min.js"></script>
     <script src="../vendors/jquery-ui/jquery-ui.min.js"></script>
